@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>山﨑豪士 | 研究プロフィール</title>
+  <meta name="description" content="山﨑豪士の研究紹介サイト。研究内容、学歴、研究分野、キーワード、受賞歴、論文、会議発表を掲載。" />
+  <meta name="color-scheme" content="light dark" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="山﨑豪士 | 研究プロフィール" />
+  <meta property="og:description" content="研究内容、学歴、研究分野、キーワード、受賞歴、論文、会議発表など。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="./profile.jpg" />
+
+  <style>
+    :root {
+      --bg: #0b1220;       /* 深めネイビー */
+      --card: #0f172a;     /* 暗めのカード */
+      --muted: #8aa0c6;    /* 淡いブルーグレー */
+      --text: #e6ecf8;     /* ほぼ白 */
+      --acc: #60a5fa;      /* アクセント（青）*/
+      --acc-2: #22d3ee;    /* サブアクセント（シアン）*/
+      --border: #1f2a44;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f7fbff;
+        --card: #ffffff;
+        --muted: #5b6b86;
+        --text: #0b1220;
+        --acc: #2563eb;
+        --acc-2: #0891b2;
+        --border: #e6eef9;
+        --shadow: 0 10px 24px rgba(2, 6, 23, .06);
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic UI", "Meiryo", "Helvetica Neue", Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 80% -10%, rgba(34,211,238,.18), transparent 60%),
+                  radial-gradient(900px 700px at -10% 20%, rgba(96,165,250,.18), transparent 60%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    a { color: var(--acc); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container { width: min(1100px, 92vw); margin: 0 auto; }
+
+    /* ===== Top Nav ===== */
+    .nav {
+      position: sticky; top: 0; z-index: 40;
+      backdrop-filter: saturate(140%) blur(10px);
+      background: color-mix(in hsl, var(--bg) 80%, transparent);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner { display: flex; align-items: center; gap: 24px; padding: 12px 0; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; }
+    .brand-dot { width: 12px; height: 12px; border-radius: 50%; background: linear-gradient(135deg, var(--acc), var(--acc-2)); box-shadow: 0 0 10px color-mix(in hsl, var(--acc) 70%, transparent); }
+    .nav-links { margin-left: auto; display: flex; gap: 18px; font-size: 15px; }
+    .nav-links a { opacity: .9; }
+
+    /* ===== Hero ===== */
+    .hero { display: grid; grid-template-columns: 180px 1fr; gap: 28px; align-items: center; padding: 40px 0 24px; }
+    .avatar { width: 180px; aspect-ratio: 1 / 1; border-radius: 24px; overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow); background: linear-gradient(180deg, #0ea5e9 0%, #1d4ed8 100%); }
+    .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    .title { margin: 0 0 8px; font-size: clamp(24px, 3.4vw, 40px); line-height: 1.25; letter-spacing: .2px; }
+    .subtitle { margin: 6px 0 16px; color: var(--muted); font-size: 16px; }
+
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 18px; }
+    .chip { padding: 6px 10px; border: 1px solid var(--border); border-radius: 999px; font-size: 12px; opacity: .95; background: color-mix(in hsl, var(--card) 80%, transparent); }
+
+    .cta { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn {
+    display: inline-flex; align-items: center; gap: 10px; 
+    padding: 10px 14px; border-radius: 12px; border: 1px solid var(--border);
+    background: linear-gradient(180deg, color-mix(in hsl, var(--card) 70%, transparent), color-mix(in hsl, var(--card) 95%, transparent));
+    box-shadow: var(--shadow);
+    font-weight: 600; font-size: 14px;
+    }
+    .btn.icon { width: 44px; height: 44px; padding: 10px; justify-content: center; }
+    .btn.icon svg { width: 20px; height: 20px; display: block; }
+    .btn:hover { transform: translateY(-1px); transition: transform .15s ease; text-decoration: none; }
+    .btn.primary { background: linear-gradient(135deg, var(--acc), var(--acc-2)); color: white; border: none; }
+
+
+    /* ===== Section ===== */
+    section { padding: 28px 0; }
+    .h2 { font-size: 18px; letter-spacing: .15em; font-weight: 800; text-transform: uppercase; color: var(--muted); margin: 0 0 18px; }
+
+    .card { background: color-mix(in hsl, var(--card) 86%, transparent); border: 1px solid var(--border); border-radius: 20px; box-shadow: var(--shadow); }
+    .pad { padding: 20px; }
+
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 860px) { .hero { grid-template-columns: 1fr; } .grid-2 { grid-template-columns: 1fr; } }
+
+    /* ===== Lists ===== */
+    .list { display: grid; gap: 14px; }
+    .item { border: 1px dashed var(--border); border-radius: 16px; padding: 14px; background: color-mix(in hsl, var(--card) 75%, transparent); }
+    .item h3 { margin: 0 0 6px; font-size: 16px; }
+    .meta { color: var(--muted); font-size: 13px; }
+    .badge { display: inline-block; padding: 2px 8px; font-size: 11px; border-radius: 999px; border: 1px solid var(--border); margin-right: 8px; }
+
+    .timeline { position: relative; padding-left: 24px; }
+    .timeline:before { content: ""; position: absolute; left: 8px; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(180deg, var(--acc), transparent); opacity: .5; }
+    .t { position: relative; margin: 0 0 16px; padding-left: 10px; }
+    .t:before { content: ""; position: absolute; left: -6px; top: .55em; width: 10px; height: 10px; border-radius: 50%; background: var(--acc); box-shadow: 0 0 0 3px color-mix(in hsl, var(--acc) 35%, transparent); }
+
+    /* ===== Publications ===== */
+    .pub { display: grid; gap: 6px; }
+    .pub .title { font-size: 16px; margin: 0; }
+    .authors { font-size: 14px; color: var(--muted); }
+    details { border: 1px solid var(--border); border-radius: 12px; padding: 10px 12px; background: color-mix(in hsl, var(--card) 90%, transparent); }
+    details summary { cursor: pointer; font-weight: 600; }
+    code.bib { display: block; white-space: pre; overflow-x: auto; font-size: 12px; }
+
+    /* ===== Footer ===== */
+    footer { padding: 40px 0 60px; color: var(--muted); font-size: 13px; text-align: center; }
+
+    /* ===== Utilities ===== */
+    .row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+    .gap-6 { gap: 6px; }
+    .muted { color: var(--muted); }
+    .kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; font-size: 12px; border: 1px solid var(--border); padding: 1px 6px; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <!-- ===== Top Navigation ===== -->
+  <div class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span>Takeshi Yamazaki / 山﨑豪士</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#pubs">論文・発表</a>
+        <a href="#awards">受賞歴</a>
+        <a href="#edu">学歴</a>
+        <a href="#contact">連絡先</a>
+      </nav>
+    </div>
+  </div>
+
+  <main class="container">
+    <!-- ===== Hero ===== -->
+    <section class="hero" id="about">
+      <div class="avatar">
+        <!-- プロフィール写真を profile.jpg に差し替えてください -->
+        <img src="profile.jpg" alt="プロフィール写真" onerror="this.outerHTML='<div class=\'pad\' style=\'color:var(--muted)\'>profile.jpg を同フォルダに置くと写真が表示されます</div>'"/>
+      </div>
+      <div>
+        <h1 class="title">山﨑 豪士 <span class="muted" style="font-size:.6em; font-weight:600">Takeshi Yamazaki</span></h1>
+        <p class="subtitle">筑波大学 人間総合科学学術院/研究群 情報学位プログラム（進学予定）／ 山本研究室（学部研究）<br>現テーマ：ドライブレコーダで記録されるマルチモーダルデータに基づき <strong>運転者の関心物体推定</strong></p>
+        <div class="chips">
+          <span class="chip">マルチモーダルデータ分析</span>
+          <span class="chip">機械学習</span>
+          <span class="chip">情報検索</span>
+        </div>
+        <div class="cta">
+          <a class="btn icon" href="https://www.instagram.com/takeshi_ymzk/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5zm6-3a1 1 0 1 1-1 1 1 1 0 0 1 1-1z"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 研究概要 ===== -->
+   
+
+    <!-- ===== 研究分野 ===== -->
+    
+
+    <!-- ===== キーワード ===== -->
+    <!-- <section id="keywords">
+      <h2 class="h2">キーワード</h2>
+      <div class="card pad">
+        <div class="row gap-6" id="keywordChips"> -->
+          <!-- キーワードは自由に追加削除してください -->
+          <!-- <span class="chip" data-key="YOLO">YOLO</span>
+          <span class="chip" data-key="ResNet">ResNet</span>
+          <span class="chip" data-key="ViT">ViT</span>
+          <span class="chip" data-key="DSA-RNN">DSA‑RNN</span>
+          <span class="chip" data-key="Sensor Fusion">Sensor Fusion</span>
+          <span class="chip" data-key="Information Retrieval">Information Retrieval</span>
+        </div>
+        <p class="muted" style="margin-top:10px">キーワードをクリックすると、下の発表リストのハイライトが切り替わります。</p>
+      </div>
+    </section> -->
+
+    <!-- ===== 論文・会議発表 ===== -->
+    <section id="pubs">
+      <h2 class="h2">論文・会議発表</h2>
+      <div class="list" id="pubList">
+        <!-- 例1：国際会議（テンプレ）-->
+        <article class="item pub" data-tags="YOLO;ViT;Sensor Fusion">
+          <div class="row">
+            <span class="badge">NTCIR-18</span>
+            <span class="meta">2025</span>
+          </div>
+          <h3 class="title">YMX2L at the NTCIR-18 Transfer-2 Task.</h3>
+          <div class="authors">Riku Mizuguchi, Takeshi Yamazaki and Shuhei Yamamoto</span></div>
+          <!-- <div class="meta">Proc. Awesome Vision &amp; IR 2025 (AVIR'25), pp.1–10.</div> -->
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== 受賞歴 ===== -->
+    <section id="awards">
+      <h2 class="h2">受賞歴</h2>
+      <div class="card pad list">
+        <div class="t">
+          <div class="item">
+            <strong>Best Poster Presentation Award</strong>
+            <div class="meta">2025 / NTCIR-18</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 学歴 ===== -->
+    <section id="edu">
+      <h2 class="h2">学歴</h2>
+      <div class="card pad timeline">
+        <div class="t">
+          <div class="item">
+            <strong>筑波大学 大学院 人間総合科学学術院/研究群 情報学位プログラム</strong>
+            <div class="meta">2026– | 修士課程（予定）</div>
+          </div>
+        </div>
+        <div class="t">
+          <div class="item">
+            <strong>筑波大学 情報学群 知識情報・図書館学類</strong>
+            <div class="meta">2022–2026 | 学士（予定）</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 連絡先 ===== -->
+    <section id="contact">
+      <h2 class="h2">連絡先</h2>
+      <div class="grid-2">
+        <div class="card pad">
+          <ul>
+            <li>メール：<a href="mailto:s2210054@u.tsukuba.ac.jp">s2210054@u.tsukuba.ac.jp</a></li>
+            
+          </ul>
+        </div>
+        <div class="card pad">
+          <h3>謝辞</h3>
+          <p class="muted"></p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Takeshi Yamazaki. All rights reserved.
+    </footer>
+  </main>
+
+  <script>
+    // 年表示
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // テーマ切替
+    const toggle = document.getElementById('themeToggle');
+    toggle?.addEventListener('click', () => {
+      const current = document.documentElement.style.colorScheme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.style.colorScheme = next;
+    });
+
+    // キーワード・ハイライト（簡易）
+    const chips = document.querySelectorAll('#keywordChips .chip');
+    const pubs = document.querySelectorAll('#pubList .pub');
+    chips.forEach(ch => ch.addEventListener('click', () => {
+      const key = ch.dataset.key;
+      chips.forEach(c => c.classList.remove('active'));
+      ch.classList.add('active');
+      pubs.forEach(p => {
+        const has = (p.dataset.tags || '').includes(key);
+        p.style.outline = has ? '2px solid var(--acc)' : 'none';
+        p.style.background = has ? 'color-mix(in hsl, var(--card) 65%, transparent)': 'color-mix(in hsl, var(--card) 75%, transparent)';
+      });
+    }));
+
+    // CVへのリンク(任意)：同フォルダに cv.pdf を置くとダウンロード可能
+    const cv = document.getElementById('cv-link');
+    if (cv) {
+      cv.href = './cv.pdf';
+    }
+  </script>
+
+  <!-- 構造化データ（Google 検索向け） -->
+  <!-- <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "山﨑 豪士",
+    "alternateName": "Takeshi Yamazaki",
+    "affiliation": {"@type": "CollegeOrUniversity", "name": "筑波大学"},
+    "jobTitle": "Student Researcher",
+    "url": "https://example.com",
+    "email": "mailto:you@example.com",
+    "knowsAbout": [
+      "Computer Vision", "Information Retrieval", "YOLO", "ResNet", "Vision Transformer", "Sensor Fusion", "Dynamic Spatial Attention"
+    ],
+    "sameAs": [
+      "https://github.com/your-id",
+      "https://www.instagram.com/your_id/"
+    ]
+  }
+  </script> -->
+</body>
+</html>
